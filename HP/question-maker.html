@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>探究の問いメーカー | Inquiry Teacher Lab</title>
+  <meta name="description" content="学年、教科、テーマ、問いの種類、授業場面を選び、探究学習で使える問いのヒントをブラウザ上で作成します。">
+  <meta property="og:title" content="探究の問いメーカー | Inquiry Teacher Lab">
+  <meta property="og:description" content="APIなしで、問いの型から授業に使える問いのヒントを表示します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-inquiry-desk.png">
+  <link rel="canonical" href="https://example.com/question-maker.html">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="question-maker">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><nav class="nav" aria-label="メインナビゲーション"><a class="brand" href="index.html">Inquiry Teacher Lab <span>探究する先生の授業準備室</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="メニューを開く" data-nav-toggle>☰</button><div class="nav-links" data-nav-links><a href="classroom-english.html">教室英語</a><a aria-current="page" href="question-maker.html">問いメーカー</a><a href="self-check.html">セルフチェック</a><a href="ib-notes.html">IB/PYP</a><a href="about.html">このサイト</a><a href="terms.html">注意事項</a></div></nav></header>
+  <main id="main">
+    <section class="page-title"><div class="container"><p class="eyebrow">Inquiry Question Maker</p><h1>探究の問いメーカー</h1><p class="lead">完全な授業案を自動生成するツールではありません。あらかじめ登録した問いの型を使い、教員が問いを考えるためのヒントを表示します。</p></div></section>
+    <section class="section">
+      <div class="container grid two">
+        <form class="card" data-question-form>
+          <div class="field"><label for="grade">学年</label><select id="grade" name="grade"><option>低学年</option><option>中学年</option><option>高学年</option><option>中学生以上</option></select></div>
+          <div class="field"><label for="subject">教科</label><input id="subject" name="subject" placeholder="例: 国語、理科、社会、UOI" required></div>
+          <div class="field"><label for="theme">テーマまたは単元</label><input id="theme" name="theme" placeholder="例: 水の使われ方、物語の人物、地域の安全" required></div>
+          <div class="field"><label for="type">問いの種類</label><select id="type" name="type"></select></div>
+          <div class="field"><label for="scene">授業の場面</label><select id="scene" name="scene"><option>導入</option><option>展開</option><option>ペア活動</option><option>グループ活動</option><option>振り返り</option></select></div>
+          <div class="toolbar"><button type="submit">問いを表示する</button><button type="button" class="secondary" data-new-question>別の問いを表示する</button></div>
+        </form>
+        <aside>
+          <div data-question-result aria-live="polite"><p class="empty">条件を入力して「問いを表示する」を押してください。</p></div>
+          <div class="toolbar"><button type="button" data-copy-question>コピーする</button></div>
+          <p class="muted" data-copy-status></p>
+          <div class="callout"><p>授業の目的、子どもの実態、学校の方針に合わせて問いを調整してください。探究型授業だけが唯一の正解ではありません。</p></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><p class="muted">外部APIは使用していません。入力内容はサーバーへ送信されません。</p></div></footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
